@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Square from '../Square';
 import './Board.css';
 import calculateWinner from '../../utilities/utility';
+import useBoard from '../../hooks/useBoard';
 
-function Board(props) {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  const [xIsNext, setXIsNext] = useState(true);
+function Board() {
+  const [squares, setSquares, xIsNext, setXIsNext] = useBoard();
 
   function handleClick(i) {
     const squaresNew = squares.slice();
